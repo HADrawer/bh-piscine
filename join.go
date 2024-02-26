@@ -8,7 +8,6 @@ func Join(strs []string, sep string) string {
 		} else {
 			str = Concat(str, strs[i])
 		}
-
 	}
 	return str
 }
