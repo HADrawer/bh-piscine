@@ -5,7 +5,7 @@ func IsAlpha(s string) bool {
 	str := []rune(s)
 
 	for _, ch := range str {
-		if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '1' && ch <= '9') {
+		if (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9') {
 			result = true
 		} else {
 			result = false
