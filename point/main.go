@@ -28,7 +28,6 @@ func main() {
 	z01.PrintRune(' ')
 	IntoRune(points.y)
 	z01.PrintRune('\n')
-	//	fmt.Printf("x = %d, y = %d\n",points.x, points.y)
 }
 
 func check(r int) {
@@ -48,7 +47,6 @@ func check(r int) {
 	}
 	z01.PrintRune(c)
 	return
-
 }
 
 func IntoRune(n int) {
