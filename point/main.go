@@ -27,12 +27,14 @@ func main() {
 	printNumber(points.y)
 	z01.PrintRune('\n')
 }
+
 func printDigit(n int) {
 	if n/10 != 0 {
 		printDigit(n / 10)
 	}
 	z01.PrintRune(rune(n%10) + '0')
 }
+
 func printNumber(n int) {
 	if n < 0 {
 		z01.PrintRune('-')
