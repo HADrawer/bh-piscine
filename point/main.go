@@ -20,12 +20,23 @@ func main() {
 	for _, r := range a {
 		z01.PrintRune(r)
 	}
-	z01.PrintRune(rune(points.x/10) + '0')
-	z01.PrintRune(rune(points.x%10) + '0')
+	printNumber(points.x)
 	for _, r := range b {
 		z01.PrintRune(r)
 	}
-	z01.PrintRune(rune(points.y/10) + '0')
-	z01.PrintRune(rune(points.y%10) + '0')
+	printNumber(points.y)
 	z01.PrintRune('\n')
+}
+func printDigit(n int) {
+	if n/10 != 0 {
+		printDigit(n / 10)
+	}
+	z01.PrintRune(rune(n%10) + '0')
+}
+func printNumber(n int) {
+	if n < 0 {
+		z01.PrintRune('-')
+		n = -n
+	}
+	printDigit(n)
 }
