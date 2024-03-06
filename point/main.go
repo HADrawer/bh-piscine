@@ -15,13 +15,17 @@ func setPoint(ptr *point) {
 func main() {
 	points := &point{}
 	setPoint(points)
-	a := "x = 42"
-	b := ", y = 21"
+	a := "x = "
+	b := ", y = "
 	for _, r := range a {
 		z01.PrintRune(r)
 	}
+	z01.PrintRune(rune(points.x/10) + '0')
+	z01.PrintRune(rune(points.x%10) + '0')
 	for _, r := range b {
 		z01.PrintRune(r)
 	}
+	z01.PrintRune(rune(points.y/10) + '0')
+	z01.PrintRune(rune(points.y%10) + '0')
 	z01.PrintRune('\n')
 }
