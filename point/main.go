@@ -13,32 +13,35 @@ func setPoint(ptr *point) {
 }
 
 func main() {
+	xStr := "x = "
+	yStr := "y = "
 	points := &point{}
 	setPoint(points)
-	a := "x = "
-	b := ", y = "
-	for _, r := range a {
-		z01.PrintRune(r)
+	xmassiv := []rune{}
+	ymassiv := []rune{}
+	xVal := points.x
+	yVal := points.y
+	for xVal != 0 {
+		xmassiv = append(xmassiv, rune(xVal%10))
+		xVal /= 10
 	}
-	printNumber(points.x)
-	for _, r := range b {
-		z01.PrintRune(r)
+	for _, val := range xStr {
+		z01.PrintRune(rune(val))
 	}
-	printNumber(points.y)
+	for i := len(xmassiv) - 1; i >= 0; i-- {
+		z01.PrintRune(xmassiv[i] + 48)
+	}
+	z01.PrintRune(',')
+	z01.PrintRune(' ')
+	for yVal != 0 {
+		ymassiv = append(ymassiv, rune(yVal%10))
+		yVal /= 10
+	}
+	for _, val := range yStr {
+		z01.PrintRune(rune(val))
+	}
+	for i := len(ymassiv) - 1; i >= 0; i-- {
+		z01.PrintRune(ymassiv[i] + 48)
+	}
 	z01.PrintRune('\n')
-}
-
-func printDigit(n int) {
-	if n/10 != 0 {
-		printDigit(n / 10)
-	}
-	z01.PrintRune(rune(n%10) + '0')
-}
-
-func printNumber(n int) {
-	if n < 0 {
-		z01.PrintRune('-')
-		n = -n
-	}
-	printDigit(n)
 }
