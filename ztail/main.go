@@ -28,7 +28,6 @@ func main() {
 		}
 	}
 	os.Exit(0)
-
 }
 
 func Atoi(s string) int {
