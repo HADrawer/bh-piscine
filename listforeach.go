@@ -6,7 +6,6 @@ func ListForEach(l *List, f func(*NodeL)) {
 		f(a)
 		a = a.Next
 	}
-
 }
 
 func Add2_node(node *NodeL) {
