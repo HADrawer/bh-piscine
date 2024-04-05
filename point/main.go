@@ -8,7 +8,6 @@ type point struct {
 }
 
 func setPoint(ptr *point) {
-
 	ptr.x = 42
 	ptr.y = 21
 }
@@ -32,7 +31,6 @@ func main() {
 }
 
 func check(r int) {
-
 	c := '0'
 	if r == 0 {
 		z01.PrintRune(c)
