@@ -2,8 +2,6 @@ package main
 
 import "github.com/01-edu/z01"
 
-//import "fmt"
-
 type point struct {
 	x int
 	y int
