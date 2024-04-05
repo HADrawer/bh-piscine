@@ -47,7 +47,6 @@ func check(r int) {
 	}
 	z01.PrintRune(c)
 	return
-
 }
 
 func IntoRune(n int) {
