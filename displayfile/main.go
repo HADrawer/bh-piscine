@@ -2,26 +2,27 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 )
 
 func main() {
-	arguments := os.Args[1:]
-	length := 0
-	for i := range arguments {
-		length = i + 1
-	}
-	if length > 1 {
+	if len(os.Args) > 2 {
 		fmt.Println("Too many arguments")
-	} else if length == 0 {
-		fmt.Println("File name missing")
-	} else if arguments[0] == "quest8.txt" {
-		content, err := ioutil.ReadFile(arguments[0])
-		if err != nil {
-			fmt.Println(err.Error())
-			return
-		}
-		fmt.Println(string(content))
+		return
 	}
+	if len(os.Args) == 1 {
+		fmt.Println("File name missing")
+		return
+	}
+	fname := os.Args[1]
+	if _, err := os.Stat(fname); os.IsNotExist(err) {
+		fmt.Println("File does not exist")
+		return
+	}
+	file_data, err := os.ReadFile(fname)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Print(string(file_data))
 }
